@@ -4,9 +4,8 @@ metadata:
   name: hello-world-webserver-service
 spec:
   selector:
-    app: hello-world-webserver-pod
+    app: hello-world-webserver-app 
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-webserver-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world-webserver-app
+  template:
+    metadata:
+      labels:
+        app: hello-world-webserver-app
+    spec:
+      containers:
+      - name: hello-world-webserver-container
+        image: biteriu/kubbapp01:ingress
+        ports:
+        - containerPort: 80
